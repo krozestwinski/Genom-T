@@ -10,7 +10,8 @@ var passportOptions = {
 }
 
 // controllers
-var home = require('home')
+var home = require('../app/controllers/home');
+var user = require('../app/controllers/user');
 
 /**
  * Expose
@@ -18,6 +19,10 @@ var home = require('home')
 
 module.exports = function (app, passport) {
 
-  app.get('/', home.index)
+	app.get('/', home.index);
+	app.get('/auth/google', passport.authenticate('google'));
+	app.get('/auth/google/return',  passport.authenticate('google', { successRedirect: '/',
+                                    failureRedirect: '/login' }));
+	app.get('/logout', user.logout);
 
 }

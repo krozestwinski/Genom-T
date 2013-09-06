@@ -21,6 +21,8 @@
     "mongoose-user": "latest",
     "passport": "latest",
     "passport-local": "latest",
+	"passport-google": "latest",
+	"passport-google-oauth": "latest",
     "connect-mongo": "latest",
     "connect-flash": "latest",
     "view-helpers": "latest",

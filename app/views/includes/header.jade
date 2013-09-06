@@ -1,3 +1,11 @@
 header
-  h1
-    a(href="/")= pkg.name
+	h1
+		a(href="/")= pkg.name
+	if (req.isAuthenticated())
+		li
+			a(href="/users/"+req.user.id, title="Profile") Profile
+		li
+			a(href="/logout", title="logout") Logout
+	else
+		li
+			a(href="/auth/google", title="Login") Login with Google

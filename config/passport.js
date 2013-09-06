@@ -31,8 +31,6 @@ module.exports = function (passport, config) {
     },
     function(accessToken, refreshToken, profile, done) {
 	  console.log('Trying to find user in DB');
-	  console.log('Access Token: ' + accessToken);
-	  console.log('Refresh Token: ' + refreshToken);
       User.findOne({ 'google.id': profile.id }, function (err, user) {
         if (!user) {
           user = new User({
@@ -45,14 +43,18 @@ module.exports = function (passport, config) {
           });
 	      console.log('Saving user to DB');
           user.save(function (err) {
-            if (err) console.log(err)
+            if (err) console.log(err);
             return done(err, user)
-          })
+          });
         } else {
-		  console.log('User found - ' + user);
-		  console.log('User access Token: ' + user.authToken);
-		  console.log('New Access Token: ' + accessToken);
-		  user.authToken = accessToken;
+		  console.log('User found in DB');
+		  if (user.authToken != accessToken) {
+			console.log('Refreshing user access token');
+			user.authToken = accessToken;
+			user.save(function (err) {
+				if (err) console.log(err);
+			});				
+		  }
           return done(err, user)
         }
       })

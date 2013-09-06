@@ -4,5 +4,15 @@ body {
   line-height: 1.4;
   color: #333333;
   background: #fff;
-  padding: 50px;
+}
+
+.main-container {
+	margin-top: 75px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.login-toolbar {
+	padding-left: 15px;
+	padding-right: 15px;
 }

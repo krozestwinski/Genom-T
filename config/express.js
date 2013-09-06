@@ -8,6 +8,7 @@ var mongoStore = require('connect-mongo')(express)
 var helpers = require('view-helpers')
 var pkg = require('../package')
 var flash = require('connect-flash')
+var less = require('less-middleware')
 var env = process.env.NODE_ENV || 'development'
 
 /*!
@@ -34,6 +35,8 @@ module.exports = function (app, config, passport) {
   // use express favicon
   app.use(express.favicon())
 
+  // less configuration
+  app.use(less({ src: config.root + '/public', compress: true }));
   app.use(express.static(config.root + '/public'))
   app.use(express.logger('dev'))
 

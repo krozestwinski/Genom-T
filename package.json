@@ -1,5 +1,5 @@
 {
-  "name": "Genom T",
+  "name": "Genom-T",
   "description": "A nodejs boilerplate application for express mongoose with google auth and twitter bootstrap",
   "version": "0.0.1",
   "author": {
@@ -28,7 +28,8 @@
     "view-helpers": "latest",
     "jade": "latest",
     "async": "latest",
-    "forever": "latest"
+    "forever": "latest",
+	"less-middleware": "latest"
   },
   "devDependencies": {
     "nodemon": "latest",

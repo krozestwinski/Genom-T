@@ -21,12 +21,12 @@ Create a script file start.sh and make it executable
 and enter:
 
 PORT="3000" \
-GOOGLE_CLIENT_ID="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com" \
-GOOGLE_CLIENT_SECRET="YOUR_GOOGLE_CLIENT_SECRET" \
-GOOGLE_CALLBACK="YOUR_DOMAIN.COM/auth/google/return" \
-SESSION_SECRET="AnyRandomCharactersHere" \
-DB_CONNECTION_STRING="mongodb://DBUSER:USERPASSWORD@YOURSERVER.mongolab.com:41208/DB_NAME" \
-DB_API_KEY="DB_API_KEY" \
+GOOGLE_CLIENT_ID="`google client id here`" \
+GOOGLE_CLIENT_SECRET="`google client secret here`" \
+GOOGLE_CALLBACK="`yourdomain.com`/auth/google/return" \
+SESSION_SECRET="`replace with random characters`" \
+DB_CONNECTION_STRING="`mongodb connection string here`" \
+DB_API_KEY="`db api key here`" \
 node server.js
 
 and execute script

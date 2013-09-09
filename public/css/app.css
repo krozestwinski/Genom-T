@@ -15,4 +15,16 @@ body {
 .login-toolbar {
 	padding-left: 15px;
 	padding-right: 15px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.font-large {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.font-small {
+	font-weight: normal;
+	font-size: 9px;
 }
